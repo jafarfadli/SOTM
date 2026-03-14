@@ -98,6 +98,8 @@ if executable:
     cpl_semester = [['0' for i in range(10)] for j in range(4)]
 
     for filename in os.listdir('mata_kuliah'):
+        if filename == '.gitkeep':
+            continue
         cpl_mata_kuliah = get_data_excel(f'mata_kuliah/{filename}', 'SUMMARY', 'H7:Q10')
         for i in range(10):
             for j in range(4):
@@ -110,6 +112,8 @@ if executable:
     # transkrip mahasiswa
     all_data_mahasiswa = []
     for filename in os.listdir('mata_kuliah'):
+        if filename == '.gitkeep':
+            continue
         data_mahasiswa = get_data_excel(f'mata_kuliah/{filename}', 'SUMMARY', 'B11:Q90')
         data_mk = get_data_excel(f'mata_kuliah/{filename}', 'SUMMARY', 'B1:B2')
         for row in data_mahasiswa:
